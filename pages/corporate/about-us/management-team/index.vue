@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full py-[20px] md:py-[40px]">
+  <div class="w-full py-[20px] md:py-[40px] font-[300]">
     <div class="container border-b border-gray-700 pb-[10px]">
       <h1 class="text-[24px] uppercase font-semibold">Management team</h1>
     </div>

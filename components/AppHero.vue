@@ -25,7 +25,7 @@ onMounted(() => {
     <div
       class="container h-full flex flex-col justify-center items-center gap-2 md:gap-4 relative z-20"
     >
-      <h1 class="text-center text-[40px] md:text-[50px] xl:text-[100px] font-normal text-white leading-[1.1]">
+      <h1 class="text-center text-[40px] md:text-[40px] xl:text-[60px] font-normal text-white leading-[1.1]">
         Pioneer Private Airport <br class="hidden md:block"> Operator in Nigeria
       </h1>
     </div>

@@ -4,13 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
-  /*width: 100vw;*/
-  /*height: 100vh;*/
-  /*background-image: url("../../assets/images/gate.jpg");*/
-  /*!*background-repeat: no-repeat;*!*/
-  /*background-size: cover;*/
 }
 
 .container {

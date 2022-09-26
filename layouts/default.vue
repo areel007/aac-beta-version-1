@@ -44,23 +44,23 @@ const menu = reactive([
   },
   {
     menuName: "Our business",
-    menuUrl: "#",
+    menuUrl: "/corporate/our-business",
     submenu: [
       {
         submenuName: 'Aviation',
-        url: '/corporate/our-business',
+        url: '/corporate/our-business/#aviation',
       },
       {
         submenuName: 'Non-Aviation',
-        url: '/corporate/our-business',
+        url: '/corporate/our-business/#non-aviation',
       },
       {
         submenuName: 'Dedicated Business',
-        url: '/corporate/our-business',
+        url: '/corporate/our-business/#dedicated-services',
       },
       {
         submenuName: 'Advertising',
-        url: '/corporate/our-business/aviation#advertising',
+        url: '/corporate/our-business/#advertising',
       }
     ]
   },

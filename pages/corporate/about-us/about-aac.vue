@@ -1,11 +1,11 @@
 <template>
-  <div class="container py-[20px] md:py-[40px]">
+  <div class="container py-[20px] md:py-[40px] font-[300]">
 
-    <div class="w-full lg:w-[900px]">
+    <div class="w-full md:w-[700px] mx-auto">
 
       <LeftYellowBorderTitle title="Asaba Airport Company" />
 
-      <p class="text-[18px] md:text-[22px] text-primary-color leading-[1.5] mb-[10px] md:mb-[20px]">
+      <p class="text-[18px] md:text-[20px] text-primary-color leading-[1.5] mb-[10px] md:mb-[20px]">
         Asaba Airport Company (AAC) is the concessionaire responsible for
         managing Asaba International Airport. It is an emerging airport operator
         in Nigeria for goods and passenger traffic.

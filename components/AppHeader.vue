@@ -144,13 +144,13 @@ onMounted(() => getWeather());
           >
             <div class="">{{ _menu.menuName }}</div>
             <div
-              class="absolute top-full left-0 z-20 w-full py-4 bg-white hidden group-hover:block border-t border-gray-300 p-10"
+              class="absolute top-full left-0 z-20 w-full p-[40px] bg-white hidden group-hover:block border-t border-gray-300"
             >
               <a
                 v-for="(_submenu, index) in _menu.submenu"
                 :key="index"
                 :href="_submenu.url"
-                class="block mb-4 last:mb-0 hover:underline text-primary-color"
+                class="block last:mb-0 hover:underline text-primary-color h-[50px] flex items-center"
                 >{{ _submenu.submenuName }}</a
               >
             </div>
@@ -162,13 +162,13 @@ onMounted(() => getWeather());
           >
             <div class="">{{ _menu.menuName }}</div>
             <div
-              class="absolute top-full left-0 z-20 w-full py-4 bg-white hidden group-hover:block border-t border-gray-300 p-10"
+              class="absolute top-full left-0 z-20 w-full p-[40px] bg-white hidden group-hover:block border-t border-gray-300"
             >
               <a
                 v-for="(_submenu, index) in _menu.submenu"
                 :key="index"
                 :href="_submenu.url"
-                class="block mb-4 last:mb-0 hover:underline text-primary-color"
+                class="block last:mb-0 hover:underline text-primary-color h-[50px] flex items-center"
                 >{{ _submenu.submenuName }}</a
               >
             </div>
@@ -180,13 +180,13 @@ onMounted(() => getWeather());
           >
             <div class="">{{ _menu.menuName }}</div>
             <div
-                class="absolute top-full left-0 z-20 w-full py-4 bg-white hidden group-hover:block border-t border-gray-300 p-10"
+                class="absolute top-full left-0 z-20 w-full p-[40px] bg-white hidden group-hover:block border-t border-gray-300"
             >
               <a
                   v-for="(_submenu, index) in _menu.submenu"
                   :key="index"
                   :href="_submenu.url"
-                  class="block mb-4 last:mb-0 hover:underline text-primary-color"
+                  class="block last:mb-0 hover:underline text-primary-color h-[50px] flex items-center"
               >{{ _submenu.submenuName }}</a
               >
             </div>

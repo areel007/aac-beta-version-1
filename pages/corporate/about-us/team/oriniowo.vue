@@ -9,7 +9,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-[380px_1fr] gap-[40px] md:gap-[80px]">
       <div class="w-[146px] md:w-full h-[200px] md:h-[520px] bg-gray-300"></div>
-      <div>
+      <div class="w-full max-w-[700px]">
         <h2 class="text-[18px] md:text-[22px] font-semibold">Oriniowo, Adejoke Mariam</h2>
         <span class="block text-[12px] md:text-[14px] mb-[20px] md:mb-[40px]">Finance Manager</span>
         <div class="mb-[40px] md:mb-[80px]">

@@ -1,10 +1,10 @@
 <template>
-  <div class="container py-[20px] md:py-[40px]">
-    <div class="w-full lg:w-[900px]">
+  <div class="container py-[20px] md:py-[40px] font-[300]">
+    <div class="w-full md:w-[700px] mx-auto">
 
       <LeftYellowBorderTitle title="Asaba International Airport" />
 
-      <p class="text-[18px] md:text-[22px] text-primary-color leading-[1.5] mb-[10px] md:mb-[20px]">
+      <p class="text-[18px] md:text-[20px] text-primary-color leading-[1.5] mb-[10px] md:mb-[20px]">
         Asaba International Airport is an airport serving Asaba, the capital of
         Delta State, Nigeria and its environs. The airport handles domestic
         services connecting the city to Nigeria's major metropolitan centres. It
@@ -37,11 +37,11 @@
     <div class="container grid grid-cols-1 md:grid-cols-2 gap-[40px]">
       <div>
         <h2 class="text-[26px] text-black font-semibold mb-[10px] md:mb-[20px]">Why Asaba Airport?</h2>
-        <p class="text-[20px] mb-[10px] md:mb-[20px]">
+        <p class="text-[20px] mb-[10px] md:mb-[20px] font-[300]">
           Situated in one of the most commercially
           vibrant areas in Nigeria.
         </p>
-        <ul class="list-disc ml-[20px]">
+        <ul class="list-disc ml-[20px] font-[300]">
           <li>
             One of the richest catchment areas in Nigeria (produces
             nearly 40% of Nigeria's GDP)
