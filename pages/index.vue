@@ -1,3 +1,10 @@
+<script setup>
+useHead({
+  title: 'Corporate',
+  titleTemplate: (title) => `AIA - ${title}`,
+})
+</script>
+
 <template>
   <div class="relative top-[148px] font-[300]">
 <!--    Hero-->
@@ -117,7 +124,7 @@
           Asaba International Airport is Nigeria’s fifth largest airport in terms of the
           number of passengers handled and goods transported.
         </p>
-        <a href="" class="py-[10px] px-[10px] bg-secondary-color mx-auto block text-center text-[12px] font-semibold" style="width: min-content; white-space: nowrap">Find out more</a>
+        <a href="/corporate/gateway" class="py-[10px] px-[10px] bg-secondary-color mx-auto block text-center text-[12px] font-semibold" style="width: min-content; white-space: nowrap">Find out more</a>
       </div>
     </section>
   </div>

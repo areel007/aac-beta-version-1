@@ -1,3 +1,10 @@
+<script setup>
+useHead({
+  title: 'Our Business',
+  titleTemplate: (title) => `AIA - ${title}`,
+})
+</script>
+
 <template>
   <div class="w-full relative top-[148px] bg-[#f5f5f5] font-[300]">
 

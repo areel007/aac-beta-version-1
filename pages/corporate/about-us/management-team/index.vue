@@ -1,3 +1,10 @@
+<script setup>
+useHead({
+  title: 'Leadership Team',
+  titleTemplate: (title) => `AIA - ${title}`,
+})
+</script>
+
 <template>
   <div class="w-full py-[20px] md:py-[40px] font-[300]">
     <div class="container">

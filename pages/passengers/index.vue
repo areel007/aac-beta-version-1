@@ -1,9 +1,10 @@
 <script setup>
 import { ref, onMounted } from 'vue';
+
 const count = ref(0)
 const step = ref(1)
 // const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
-const date = ref(new Date().toDateString())
+const date = ref(new Date().toLocaleDateString())
 
 onMounted(() => {
   console.log(date.value)
@@ -14,6 +15,11 @@ onMounted(() => {
       count.value = 0
     }
   }, 5000)
+})
+
+useHead({
+  title: 'Passengers',
+  titleTemplate: (title) => `AIA - ${title}`,
 })
 </script>
 
@@ -41,69 +47,70 @@ onMounted(() => {
         </a>
       </div>
 
-      <div class="absolute left-[50%] bottom-[-20px] translate-x-[-50%] bg-secondary-color p-[10px] md:p-[20px] w-[90%] lg:w-[800px] z-20">
-        <nav class="flex items-center gap-[10px] md:gap-[20px] mb-[10px] md:mb-[20px] text-[14px] font-medium">
-          <span class="cursor-pointer" @click="step = 1" :class="step===1?'router-link-active':null">Arrivals</span>
-          <span class="cursor-pointer" @click="step = 2" :class="step===2?'router-link-active':null">Departures</span>
-          <span class="cursor-pointer" @click="step = 3" :class="step===3?'router-link-active':null">All Flights</span>
-        </nav>
-        <div v-if="step===1" class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-[10px] items-center">
-          <div class="bg-white p-[5px] h-[54px]">
-            <span class="block text-[12px]">Pick a date</span>
-            <input type="date" class="w-full text-[14px]" :value="date" pattern="\d{4}-\d{2}-\d{2}">
-          </div>
-          <div class="bg-white p-[5px] flex items-center gap-2 h-[54px]">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-400">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-            </svg>
-            <input type="text" class="w-full outline-none placeholder:text-[12px]" placeholder="Search airline, flight number, or city">
-          </div>
-          <a href="" class="flex items-center gap-[5px] h-[54px]">
-            <span>View All Arrivals</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-            </svg>
-          </a>
-        </div>
+<!--      <div class="absolute left-[50%] bottom-[-20px] translate-x-[-50%] bg-secondary-color p-[10px] md:p-[20px] w-[90%] lg:w-[800px] z-20">-->
+<!--        <nav class="flex items-center gap-[10px] md:gap-[20px] mb-[10px] md:mb-[20px] text-[14px] font-medium">-->
+<!--          <span class="cursor-pointer" @click="step = 1" :class="step===1?'router-link-active':null">Arrivals</span>-->
+<!--          <span class="cursor-pointer" @click="step = 2" :class="step===2?'router-link-active':null">Departures</span>-->
+<!--          <span class="cursor-pointer" @click="step = 3" :class="step===3?'router-link-active':null">All Flights</span>-->
+<!--        </nav>-->
+<!--        <div v-if="step===1" class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-[10px] items-center">-->
+<!--          <div class="bg-white p-[5px] h-[54px]">-->
+<!--            <span class="block text-[12px]">Pick a date</span>-->
+<!--            <input type="date" class="w-full text-[14px]" :value="date" pattern="\d{4}-\d{2}-\d{2}">-->
+<!--          </div>-->
+<!--          <div class="bg-white p-[5px] flex items-center gap-2 h-[54px]">-->
+<!--            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-400">-->
+<!--              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />-->
+<!--            </svg>-->
+<!--            <input type="text" class="w-full outline-none placeholder:text-[12px]" placeholder="Search airline, flight number, or city">-->
+<!--          </div>-->
+<!--          <a href="" class="flex items-center gap-[5px] h-[54px]">-->
+<!--            <span>View All Arrivals</span>-->
+<!--            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">-->
+<!--              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />-->
+<!--            </svg>-->
+<!--          </a>-->
+<!--        </div>-->
 
-        <div v-if="step===2" class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-[10px] items-center">
-          <div class="bg-white p-[5px] h-[54px]">
-            <span class="block text-[12px]">Pick a date</span>
-            <input type="date" class="w-full">
-          </div>
-          <div class="bg-white p-[5px] flex items-center gap-2 h-[54px]">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-400">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-            </svg>
-            <input type="text" class="w-full outline-none placeholder:text-[12px]" placeholder="Search airline, flight number, or city">
-          </div>
-          <a href="" class="flex items-center gap-[5px] h-[54px]">
-            <span>View All Departures</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-            </svg>
-          </a>
-        </div>
+<!--        <div v-if="step===2" class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-[10px] items-center">-->
+<!--          <div class="bg-white p-[5px] h-[54px]">-->
+<!--            <span class="block text-[12px]">Pick a date</span>-->
+<!--            <input type="date" class="w-full">-->
+<!--          </div>-->
+<!--          <div class="bg-white p-[5px] flex items-center gap-2 h-[54px]">-->
+<!--            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-400">-->
+<!--              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />-->
+<!--            </svg>-->
+<!--            <input type="text" class="w-full outline-none placeholder:text-[12px]" placeholder="Search airline, flight number, or city">-->
+<!--          </div>-->
+<!--          <a href="" class="flex items-center gap-[5px] h-[54px]">-->
+<!--            <span>View All Departures</span>-->
+<!--            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">-->
+<!--              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />-->
+<!--            </svg>-->
+<!--          </a>-->
+<!--        </div>-->
 
-        <div v-if="step===3" class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-[10px] items-center">
-          <div class="bg-white p-[5px] h-[54px]">
-            <span class="block text-[12px]">Pick a date</span>
-            <input type="date" class="w-full">
-          </div>
-          <div class="bg-white p-[5px] flex items-center gap-2 h-[54px]">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-400">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-            </svg>
-            <input type="text" class="w-full outline-none placeholder:text-[12px]" placeholder="Search airline, flight number, or city">
-          </div>
-          <a href="" class="flex items-center gap-[5px] h-[54px]">
-            <span>View All Flights</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-            </svg>
-          </a>
-        </div>
-      </div>
+<!--        <div v-if="step===3" class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-[10px] items-center">-->
+<!--          <div class="bg-white p-[5px] h-[54px]">-->
+<!--            <span class="block text-[12px]">Pick a date</span>-->
+<!--            <input type="date" class="w-full">-->
+<!--          </div>-->
+<!--          <div class="bg-white p-[5px] flex items-center gap-2 h-[54px]">-->
+<!--            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-400">-->
+<!--              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />-->
+<!--            </svg>-->
+<!--            <input type="text" class="w-full outline-none placeholder:text-[12px]" placeholder="Search airline, flight number, or city">-->
+<!--          </div>-->
+<!--          <a href="" class="flex items-center gap-[5px] h-[54px]">-->
+<!--            <span>View All Flights</span>-->
+<!--            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">-->
+<!--              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />-->
+<!--            </svg>-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </div>-->
+
     </section>
 
 <!--    A better experience-->
@@ -115,7 +122,7 @@ onMounted(() => {
           <div class="bg-black opacity-60 absolute w-full h-full"></div>
 <!--          <img src="../../assets/images/better-travel-experience21.jpg" alt="aia" class="w-full h-full object-cover">-->
           <div class="h-auto w-full px-[20px] md:px-[40px] py-[20px] md:py-0 change-bg relative z-10">
-            <p class="w-full md:w-[400px] mb-[20px] text-primary-color md:text-white font-[300]">A happy journey begins with a great airport experience! Let’s make yours memorable.</p>
+            <p class="w-full md:w-[400px] mb-[20px] text-primary-color md:text-white font-[300] text-base md:text-[18px]">A happy journey begins with a great airport experience! Let’s make yours memorable.</p>
             <a href="" class="py-[5px] px-[10px] bg-white border md:border-none border-primary-color text-center text-[12px] flex items-center" style="width: min-content; white-space: nowrap">
               <span class="text-primary-color">Find out more</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-primary-color">

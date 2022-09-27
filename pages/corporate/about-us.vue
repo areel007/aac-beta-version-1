@@ -1,5 +1,10 @@
 <script setup>
 
+useHead({
+  title: 'About Us',
+  titleTemplate: (title) => `AIA - ${title}`,
+})
+
 const route = useRoute()
 console.log(route.fullPath)
 

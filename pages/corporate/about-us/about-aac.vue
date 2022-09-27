@@ -1,3 +1,10 @@
+<script setup>
+useHead({
+  title: 'About AAC',
+  titleTemplate: (title) => `AIA - ${title}`,
+})
+</script>
+
 <template>
   <div class="container py-[20px] md:py-[40px] font-[300]">
 

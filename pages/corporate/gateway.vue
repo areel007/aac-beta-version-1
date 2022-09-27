@@ -1,10 +1,10 @@
 <script setup>
 useHead({
-  title: 'Contacts',
+  title: 'Gateway to South-East region',
   titleTemplate: (title) => `AIA - ${title}`,
 })
 </script>
 
 <template>
-  <div>Contacts</div>
+  <div class="relative top-[148px] font-[300]">Gateway</div>
 </template>
