@@ -129,78 +129,152 @@ onMounted(() => getWeather());
         class="w-100 md:w-150"
         @click="$router.push('/')"
       />
-      <nav
-        class="uppercase hidden md:flex items-center font-[400] text-xs h-full"
-      >
-        <a
-          :href="_menu.menuUrl"
-          v-for="(_menu, index) in menu"
-          :key="index"
-          class="text-primary hover:text-secondary-color px-4 h-full flex justify-center items-center border-transparent hover:border-primary-color"
+
+<!--      Nav menu-->
+
+      <nav class="h-full hidden md:flex items-center">
+        <div
+            v-for="(_menu, index) in menu"
+            :key="index"
+            class="uppercase text-[12px] px-[20px] h-full flex items-center text-primary-color font-medium group cursor-pointer"
         >
-          <div
-            v-if="_menu.menuName === 'About us'"
-            class="group h-full flex items-center justify-center"
-          >
-            <div class="">{{ _menu.menuName }}</div>
-            <div
-              class="absolute top-full left-0 z-20 w-full p-[40px] bg-white hidden group-hover:block border-t border-gray-300"
-            >
-              <a
-                v-for="(_submenu, index) in _menu.submenu"
-                :key="index"
-                :href="_submenu.url"
-                class="block last:mb-0 hover:underline text-primary-color h-[50px] flex items-center"
-                >{{ _submenu.submenuName }}</a
-              >
-            </div>
-          </div>
 
+<!--          About us-->
           <div
-            v-if="_menu.menuName === 'Our business'"
-            class="group h-full flex items-center justify-center"
+              v-if="_menu.menuName==='About us'"
+              class="h-full h-full flex items-center"
           >
-            <div class="">{{ _menu.menuName }}</div>
-            <div
-              class="absolute top-full left-0 z-20 w-full p-[40px] bg-white hidden group-hover:block border-t border-gray-300"
-            >
-              <a
-                v-for="(_submenu, index) in _menu.submenu"
-                :key="index"
-                :href="_submenu.url"
-                class="block last:mb-0 hover:underline text-primary-color h-[50px] flex items-center"
-                >{{ _submenu.submenuName }}</a
-              >
-            </div>
-          </div>
-
-          <div
-              v-if="_menu.menuName === 'Flights'"
-              class="group h-full flex items-center justify-center"
-          >
-            <div class="">{{ _menu.menuName }}</div>
-            <div
-                class="absolute top-full left-0 z-20 w-full p-[40px] bg-white hidden group-hover:block border-t border-gray-300"
-            >
+            <span class="hover:text-secondary-color">{{ _menu.menuName }}</span>
+            <div class="absolute top-full z-10 bg-white w-full left-0 p-[40px] font-[400] hidden group-hover:block">
               <a
                   v-for="(_submenu, index) in _menu.submenu"
                   :key="index"
                   :href="_submenu.url"
-                  class="block last:mb-0 hover:underline text-primary-color h-[50px] flex items-center"
-              >{{ _submenu.submenuName }}</a
+                  class="block h-[50px] hover:underline"
               >
+                {{ _submenu.submenuName }}
+              </a>
             </div>
           </div>
 
-          <a
-              :href="_menu.menuUrl"
-            v-if="
-              _menu.menuName !== 'About us' && _menu.menuName !== 'Our business' && _menu.menuName !== 'Flights'
-            "
-            >{{ _menu.menuName }}</a
+<!--          Flights-->
+          <div
+              v-if="_menu.menuName==='Flights'"
+              class="h-full h-full flex items-center group"
           >
-        </a>
+            <span class="hover:text-secondary-color">{{ _menu.menuName }}</span>
+            <div class="absolute top-full z-10 bg-white w-full left-0 p-[40px] font-[400] hidden group-hover:block">
+              <a
+                  v-for="(_submenu, index) in _menu.submenu"
+                  :key="index"
+                  :href="_submenu.url"
+                  class="block h-[50px] hover:underline"
+              >
+                {{ _submenu.submenuName }}
+              </a>
+            </div>
+          </div>
+
+<!--          Our business-->
+          <div
+              v-if="_menu.menuName==='Our business'"
+              class="h-full h-full flex items-center group"
+          >
+            <a href="/corporate/our-business" class="cursor-pointer hover:text-secondary-color">{{ _menu.menuName }}</a>
+            <div class="absolute top-full z-10 bg-white w-full left-0 p-[40px] font-[400] hidden group-hover:block">
+              <a
+                  v-for="(_submenu, index) in _menu.submenu"
+                  :key="index"
+                  :href="_submenu.url"
+                  class="block h-[50px] hover:underline"
+              >
+                {{ _submenu.submenuName }}
+              </a>
+            </div>
+          </div>
+
+<!--          No dropdown-->
+          <a
+              :href="_menu.menuUrl" v-if="_menu.menuName!== 'About us' && _menu.menuName !== 'Our business' && _menu.menuName !== 'Flights'"
+              class="hover:text-secondary-color"
+          >
+            {{ _menu.menuName }}
+          </a>
+
+        </div>
       </nav>
+<!--      <nav-->
+<!--        class="uppercase hidden md:flex items-center font-[400] text-xs h-full"-->
+<!--      >-->
+<!--        <a-->
+<!--          :href="_menu.menuUrl"-->
+<!--          v-for="(_menu, index) in menu"-->
+<!--          :key="index"-->
+<!--          class="text-primary hover:text-secondary-color px-4 h-full flex justify-center items-center border-transparent hover:border-primary-color"-->
+<!--        >-->
+<!--          <div-->
+<!--            v-if="_menu.menuName === 'About us'"-->
+<!--            class="group h-full flex items-center justify-center"-->
+<!--          >-->
+<!--            <div class="">{{ _menu.menuName }}</div>-->
+<!--            <div-->
+<!--              class="absolute top-full left-0 z-20 w-full p-[40px] bg-white hidden group-hover:block border-t border-gray-300"-->
+<!--            >-->
+<!--              <a-->
+<!--                v-for="(_submenu, index) in _menu.submenu"-->
+<!--                :key="index"-->
+<!--                :href="_submenu.url"-->
+<!--                class="block last:mb-0 hover:underline text-primary-color h-[50px] flex items-center"-->
+<!--                >{{ _submenu.submenuName }}</a-->
+<!--              >-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div-->
+<!--            v-if="_menu.menuName === 'Our business'"-->
+<!--            class="group h-full flex items-center justify-center"-->
+<!--          >-->
+<!--            <div class="">{{ _menu.menuName }}</div>-->
+<!--            <div-->
+<!--              class="absolute top-full left-0 z-20 w-full p-[40px] bg-white hidden group-hover:block border-t border-gray-300"-->
+<!--            >-->
+<!--              <a-->
+<!--                v-for="(_submenu, index) in _menu.submenu"-->
+<!--                :key="index"-->
+<!--                :href="_submenu.url"-->
+<!--                class="block last:mb-0 hover:underline text-primary-color h-[50px] flex items-center"-->
+<!--                >{{ _submenu.submenuName }}</a-->
+<!--              >-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div-->
+<!--              v-if="_menu.menuName === 'Flights'"-->
+<!--              class="group h-full flex items-center justify-center"-->
+<!--          >-->
+<!--            <div class="">{{ _menu.menuName }}</div>-->
+<!--            <div-->
+<!--                class="absolute top-full left-0 z-20 w-full p-[40px] bg-white hidden group-hover:block border-t border-gray-300"-->
+<!--            >-->
+<!--              <a-->
+<!--                  v-for="(_submenu, index) in _menu.submenu"-->
+<!--                  :key="index"-->
+<!--                  :href="_submenu.url"-->
+<!--                  class="block last:mb-0 hover:underline text-primary-color h-[50px] flex items-center"-->
+<!--              >{{ _submenu.submenuName }}</a-->
+<!--              >-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <a-->
+<!--              :href="_menu.menuUrl"-->
+<!--            v-if="-->
+<!--              _menu.menuName !== 'About us' && _menu.menuName !== 'Our business' && _menu.menuName !== 'Flights'-->
+<!--            "-->
+<!--            >{{ _menu.menuName }}</a-->
+<!--          >-->
+<!--        </a>-->
+<!--      </nav>-->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
