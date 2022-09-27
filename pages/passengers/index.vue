@@ -50,7 +50,7 @@ onMounted(() => {
         <div v-if="step===1" class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-[10px] items-center">
           <div class="bg-white p-[5px] h-[54px]">
             <span class="block text-[12px]">Pick a date</span>
-            <input type="date" class="w-full text-[14px]" :value="date">
+            <input type="date" class="w-full text-[14px]" :value="date" pattern="\d{4}-\d{2}-\d{2}">
           </div>
           <div class="bg-white p-[5px] flex items-center gap-2 h-[54px]">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-400">
@@ -179,24 +179,25 @@ onMounted(() => {
       </div>
     </section>
 
-<!--    Experience Asaba-->
-    <section class="w-full mt-[80px]">
-      <div class="container">
-        <h2 class="text-primary-color text-[22px] md:text-[32px] font-normal mb-[20px] leading-[1]">Experience Asaba</h2>
-        <div class="w-full h-[528px] py-[50px] lg:py-[100px] px-[20px] gateway">
-          <h1 class="text-[30px] md:text-[40px] text-white font-normal text-primary-color leading-[1] mb-[40px]">The gateway to the <br> South-east region</h1>
-          <p class="text-white mb-[40px] w-full lg:w-1/2 font-[200]">
-            You have arrived at the gateway to the vibrant and commercial South-East hub of
-            Nigeria – Asaba, Delta State. Your experience of its culture, people and food starts
-            here, within our airport lounge and interacting with our staff, before heading into
-            the lively city.
-          </p>
-          <a href="" class="bg-secondary-color px-[10px] py-[5px] text-[12px] font-semibold flex items-center gap-[5px]" style="width: min-content; white-space: nowrap">
-            <span>Find out more</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-black">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-            </svg>
-          </a>
+
+    <section class="w-full mt-[80px]  relative">
+      <div class="parallax">
+        <div class="container h-full flex items-center">
+          <div class="w-[90%]">
+            <h1 class="text-[30px] md:text-[40px] text-white font-normal text-primary-color leading-[1] mb-[40px]">Experience Asaba</h1>
+            <p class="text-white mb-[40px] w-full lg:w-[700px] font-[200]">
+              You have arrived at the gateway to the vibrant and commercial South-East hub of
+              Nigeria – Asaba, Delta State. Your experience of its culture, people and food starts
+              here, within our airport lounge and interacting with our staff, before heading into
+              the lively city.
+            </p>
+            <a href="" class="bg-secondary-color px-[10px] py-[5px] text-[12px] font-semibold flex items-center gap-[5px]" style="width: min-content; white-space: nowrap">
+              <span>Find out more</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-black">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -233,6 +234,15 @@ onMounted(() => {
 .change-bg {
   background-color: transparent;
   margin: 0 5px 5px 5px;
+}
+.parallax {
+  width: 100%;
+  height: 60vh;
+  /*min-height: 40vh;*/
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../assets/images/experience-asaba-image.jpg");
+  background-attachment: fixed;
 }
 
 @media screen and (max-width: 768px) {

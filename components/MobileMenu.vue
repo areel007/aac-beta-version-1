@@ -108,3 +108,11 @@ const props = defineProps({
     </nav>
   </div>
 </template>
+
+<style scoped>
+.router-link-active:before {
+  width: 0;
+  height: 0;
+  background: none;
+}
+</style>

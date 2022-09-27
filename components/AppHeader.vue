@@ -192,11 +192,12 @@ onMounted(() => getWeather());
             </div>
           </div>
 
-          <span
+          <a
+              :href="_menu.menuUrl"
             v-if="
               _menu.menuName !== 'About us' && _menu.menuName !== 'Our business' && _menu.menuName !== 'Flights'
             "
-            >{{ _menu.menuName }}</span
+            >{{ _menu.menuName }}</a
           >
         </a>
       </nav>

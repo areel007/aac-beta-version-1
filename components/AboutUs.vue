@@ -25,19 +25,6 @@
 </template>
 
 <style scoped>
-/*.swag {*/
-/*  background-image: linear-gradient(*/
-/*      to right,*/
-/*      rgba(0, 65, 81, 1),*/
-/*      rgba(245, 246, 252, 0)*/
-/*    ),*/
-/*    url(../assets/images/better-travel-experience2.jpg);*/
-/*  background-size: cover;*/
-/*  color: white;*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*  height: 528px;*/
-/*}*/
 
 .swag {
   background-image: url(../assets/images/better-travel-experience2.jpg);
