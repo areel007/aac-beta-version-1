@@ -11,7 +11,7 @@ const route = useRoute()
 
       <div class="bg-[#f5f5f5]">
         <div class="container mx-auto py-[15px] md:py-[30px] text-primary-color font-medium capitalize md:uppercase text-[10px] md:text-[14px]">
-          <div class="ml-0 lg:ml-[150px] flex items-center gap-2 md:gap-4">
+          <div class="ml-0 lg:ml-[150px] text-[12px] flex items-center gap-2 md:gap-4">
             <a href="/passengers/flights/arrivals" class="cursor-pointer" :class="route.fullPath==='/passengers/flights/arrivals'?'router-link-active': null">Arrivals</a>
             <a href="/passengers/flights/departures" class="cursor-pointer" :class="route.fullPath==='/passengers/flights/departures'?'router-link-active': null">Departures</a>
             <a href="/passengers/flights/passengers-guide" class="cursor-pointer" :class="route.fullPath==='/passengers/flights/passengers-guide'?'router-link-active': null">Passengers Guide</a>
@@ -33,7 +33,7 @@ const route = useRoute()
   position: absolute;
   left: 0;
   top: 105%;
-  width: 50%;
+  width: 30px;
   height: 2px;
   background: #f69f09;
 }

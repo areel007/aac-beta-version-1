@@ -17,10 +17,11 @@ console.log(route.fullPath)
     </section>
     <div class="w-full py-[15px] md:py-[30px] bg-[#f5f5f5]">
       <div class="container">
-        <nav class="flex gap-[15px] md:gap-[30px] text-primary-color font-semibold text-[12px] uppercase ml-0 lg:ml-[150px]">
+        <nav class="flex gap-[15px] md:gap-[30px] leading-[1] text-primary-color font-semibold text-[10px] md:text-[12px] uppercase ml-0 lg:ml-[150px]">
           <a href="/corporate/about-us/history" :class="route.fullPath==='/corporate/about-us/history'?'router-link-active':null">History</a>
           <a href="/corporate/about-us/about-aac" :class="route.fullPath==='/corporate/about-us/about-aac'?'router-link-active':null">About AAC</a>
           <a href="/corporate/about-us/management-team" :class="route.fullPath==='/corporate/about-us/management-team'?'router-link-active':null">Leadership Team</a>
+          <a href="/corporate/about-us/vision-mission" :class="route.fullPath==='/corporate/about-us/vision-mission'?'router-link-active':null">Vision/Mission</a>
         </nav>
       </div>
     </div>

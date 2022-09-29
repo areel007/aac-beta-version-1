@@ -16,11 +16,15 @@ const menu = reactive([
     submenu: [
       {
         submenuName: 'Arrivals',
-        url:'/passengers/arrivals'
+        url:'/passengers/flights/arrivals'
       },
       {
         submenuName: 'Departures',
-        url:'/passengers/departures'
+        url:'/passengers/flights/departures'
+      },
+      {
+        submenuName: 'Passengers Guide',
+        url:'/passengers/flights/passengers-guide'
       },
     ]
   },
@@ -33,13 +37,17 @@ const menu = reactive([
         url: '/corporate/about-us/history'
       },
       {
+        submenuName: 'Vision & Mission',
+        url: '/corporate/about-us/vision-mission'
+      },
+      {
         submenuName: 'About AAC',
         url: '/corporate/about-us/about-aac'
       },
       {
-        submenuName: 'Management Team',
+        submenuName: 'Leadership Team',
         url: '/corporate/about-us/management-team'
-      }
+      },
     ]
   },
   {

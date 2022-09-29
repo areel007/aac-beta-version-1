@@ -198,7 +198,7 @@ useHead({
               here, within our airport lounge and interacting with our staff, before heading into
               the lively city.
             </p>
-            <a href="" class="bg-secondary-color px-[10px] py-[5px] text-[12px] font-semibold flex items-center gap-[5px]" style="width: min-content; white-space: nowrap">
+            <a href="/passengers/experience-asaba" class="bg-secondary-color px-[10px] py-[5px] text-[12px] font-semibold flex items-center gap-[5px]" style="width: min-content; white-space: nowrap">
               <span>Find out more</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-black">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
