@@ -30,9 +30,10 @@ const reduce = ref(false)
       </div>
     </div>
 
-    <div class="w-full py-[40px] bg-[#F6F1EF] h-auto">
+    <div class="w-full mx-auto py-[40px] bg-[#F6F1EF]">
       <h1 class="text-[20px] md:text-[28px] text-center">Vision, Mission & Values</h1>
-      <div class="container">
+      <div class="w-full h-auto mb-[80px]">
+
         <div class="flex flex-col lg:grid lg:grid-cols-3 mt-[40px] lg:mt-[150px] mb-[40px] grid__grid gap-[40px] lg:gap-0">
 
           <div class="w-full h-auto lg:h-[400px] flex big-box relative group cursor-pointer" @mouseover="reduce=true" @mouseleave="reduce=false">
@@ -41,8 +42,10 @@ const reduce = ref(false)
               <span class="text-lg font-normal group-hover:hidden absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">Vision</span>
               <div class="hide w-full h-full flex flex-col justify-center items-center">
                 <span class="text-lg mb-0 group-hover:mb-[10px] font-normal group-hover:font-semibold text-center">Vision</span>
-                <p class="hidden-text text-center w-[90%]">
-                  To strengthen HKIA as the leading international aviation hub and a key engine for the economic growth of Hong Kong.
+                <p class="hidden-text text-center w-[90%] text-[12px] 2xl:text-[14px]">
+                  To be the change driver in the aviation industry in Nigeria; by promoting professional excellence in
+                  airport management and operations; thereby helping airlines operate safely, securely, and
+                  efficiently, as well as providing pleasurable and convenient travel experience to passengers.
                 </p>
               </div>
             </div>
@@ -54,8 +57,11 @@ const reduce = ref(false)
               <span class="text-lg font-normal group-hover:hidden absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">Mission</span>
               <div class="group-hover:hidden w-full h-full flex flex-col justify-center items-center hide__hide">
                 <span class="text-lg mb-[10px] font-normal font-semibold text-center">Mission</span>
-                <p class="text-center w-[90%]">
-                  To excel in the operation and development of HKIA in collaboration with our partners by
+                <p class="text-center w-[90%] text-[12px] 2xl:text-[14px]">
+                  To deliver a state-of-the-art infrastructure, safe and secure and a conducive environment for all
+                  airport stakeholders to develop their businesses.
+                  To become the exciting gateway and preferred business hub for air travelers in the South-South
+                  and South-East travel corridor.
                 </p>
               </div>
             </div>
@@ -66,10 +72,21 @@ const reduce = ref(false)
             <div class="orbit"></div>
 
             <div class="relative lg:absolute w-full h-full hide__stupid">
-              <div class="w-[100px] h-[100px] bg-gray-300 absolute left-[50%] top-[-50px] translate-x-[-50%]"></div>
-              <div class="w-[100px] h-[100px] bg-gray-300 absolute top-[50%] translate-y-[-50%] left-[-50px]"></div>
-              <div class="w-[100px] h-[100px] bg-gray-300 absolute top-[50%] translate-y-[-50%] right-[-50px]"></div>
-              <div class="w-[100px] h-[100px] bg-gray-300 absolute left-[50%] bottom-[-50px] translate-x-[-50%]"></div>
+              <div class="z-10 w-[100px] h-[100px] bg-gray-300 absolute left-[50%] top-0 translate-x-[-50%] text-[12px] text-center flex items-center p-[10px] werey">
+                Discipline in Service Delivery
+              </div>
+              <div class="z-10 w-[100px] h-[100px] bg-gray-300 absolute top-[40%] translate-y-[-40%] left-[0] xl:left-[20px] text-[12px] text-center flex items-center p-[10px]">
+                Excellent Customer Experience
+              </div>
+              <div class="z-10 w-[100px] h-[100px] bg-gray-300 absolute top-[40%] translate-y-[-40%] right-[20px] text-[12px] text-center flex items-center p-[10px]">
+                Leadership for Longevity
+              </div>
+              <div class="z-10 w-[100px] h-[100px] bg-gray-300 absolute left-[20%] bottom-[-30px] translate-x-[-50%] text-[12px] text-center flex items-center p-[10px] left-down">
+                Teamwork built on Technology
+              </div>
+              <div class="z-10 w-[100px] h-[100px] bg-gray-300 absolute right-[70px] bottom-[-30px] text-[12px] text-center flex items-center p-[10px] right-down">
+                Accountability in Action
+              </div>
             </div>
 
             <div class="relative w-[150px] h-[150px] bg-gray-300 rounded-full ball-vision m-auto big-box-three">
@@ -81,7 +98,7 @@ const reduce = ref(false)
 
           </div>
 
-          <div class="grid grid-cols-2 lg:hidden gap-4 relative top-full mobile-values">
+          <div class="w-[90%] mx-auto grid grid-cols-2 lg:hidden gap-4 relative top-full mobile-values">
             <div class="w-full h-[100px] bg-gray-300"></div>
             <div class="w-full h-[100px] bg-gray-300"></div>
             <div class="w-full h-[100px] bg-gray-300"></div>
@@ -102,8 +119,8 @@ const reduce = ref(false)
   transition: all .3s ease;
 }
 .big-box:hover .ball-vision {
-  width: 280px;
-  height: 280px;
+  width: 380px;
+  height: 380px;
   background: #f69f09;
 }
 .big-box:hover .hidden-text {
@@ -111,8 +128,8 @@ const reduce = ref(false)
   opacity: 1;
 }
 .ball-mission {
-  width: 280px;
-  height: 280px;
+  width: 380px;
+  height: 380px;
   background: #f69f09;
   transition: all .5s ease;
 }
@@ -120,12 +137,12 @@ const reduce = ref(false)
   display: none;
 }
 .big-box:hover .ball-mission {
-  width: 280px;
-  height: 280px;
+  width: 380px;
+  height: 380px;
 }
 .big-box:hover .ball-values {
-  width: 280px;
-  height: 280px;
+  width: 380px;
+  height: 380px;
 }
 .reduce {
   width: 150px;
@@ -136,8 +153,8 @@ const reduce = ref(false)
   opacity: 0;
 }
 .expand {
-  width: 280px;
-  height: 280px;
+  width: 380px;
+  height: 380px;
   background: #f69f09;
   z-index: 10;
 }
@@ -180,8 +197,8 @@ const reduce = ref(false)
 }
 .big-box:hover .orbit {
   opacity: 1;
-  width: 320px;
-  height: 320px;
+  width: 420px;
+  height: 420px;
 }
 .hide__stupid {
   display: none;
@@ -195,12 +212,47 @@ const reduce = ref(false)
 .big-box-three:hover .mobile-values {
   display: grid;
 }
+.werey {
+  top: -100px;
+}
+
+
+@media screen and (max-width: 1400px) {
+  .big-box:hover .ball-vision {
+    width: 280px;
+    height: 280px;
+  }
+  .big-box:hover .orbit {
+    opacity: 1;
+    width: 320px;
+    height: 320px;
+  }
+  .expand {
+    width: 280px;
+    height: 280px;
+  }
+  .big-box:hover .ball-mission {
+    width: 280px;
+    height: 280px;
+  }
+  .werey {
+    top: 0;
+  }
+  .left-down {
+    left: 30%;
+    bottom: 0;
+  }
+  .right-down {
+    right: 20%;
+    bottom: 0;
+  }
+}
 
 @media screen and (max-width: 1020px) {
   .ball-vision,
   .ball-mission {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     background: #f69f09;
   }
   .hide__stupid {

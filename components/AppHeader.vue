@@ -34,6 +34,9 @@ const weather = ref(null);
 const weatherIcon = ref(null);
 
 const getWeatherToCelcius = computed(() => {
+  if (weather.value===null) {
+    return 0
+  }
   return weather.value - 273.5;
 });
 
@@ -45,7 +48,7 @@ const getWeather = () => {
   navigator.geolocation.getCurrentPosition((pos) => {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&appid=a084881c3144d8d8bb06580901c4902e`
+        'https://api.openweathermap.org/data/2.5/weather?lat=6.204167&lon=6.665278&appid=a084881c3144d8d8bb06580901c4902e'
       )
       .then((res) => {
         weather.value = res.data.main.temp;
