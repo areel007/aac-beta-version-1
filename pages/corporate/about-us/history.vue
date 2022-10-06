@@ -6,7 +6,7 @@ useHead({
 </script>
 
 <template>
-  <div class="container py-[20px] md:py-[40px] font-[300]">
+  <div class="container py-[40px] font-[300]">
 
     <div class="w-full lg:w-[800px] ml- 0 lg:ml-[150px]">
 
@@ -41,7 +41,7 @@ useHead({
 
     </div>
   </div>
-  <div class="w-full py-[20px] md:py-[40px] bg-gray-200">
+  <div class="w-full py-[40px] bg-gray-200">
     <div class="container grid grid-cols-1 md:grid-cols-2 gap-[40px]">
       <div>
         <h2 class="text-[26px] text-black font-semibold mb-[10px] md:mb-[20px]">Why Asaba Airport?</h2>

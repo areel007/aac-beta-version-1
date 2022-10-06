@@ -26,22 +26,22 @@ useHead({
 <template>
   <div class="w-full relative top-[148px] font-[300]">
 <!--    Passengers Hero-->
-    <section class="w-full h-[calc(100vh_-_88px)] 2xl:h-[calc(80vh_-_88px)] relative">
+    <section class="w-full h-[calc(80vh-120px)] md:h-[calc(100vh_-_88px)] relative">
       <img src="../../assets/images/slide-1.jpg" v-if="count===0" alt="aia" class="top-0 w-full h-full object-cover absolute z-10">
       <img src="../../assets/images/slide-2.jpg" v-if="count===1" alt="aia" class="top-0 w-full h-full object-cover absolute z-10">
       <div
           class="absolute top-0 left-0 bg-primary-color opacity-70 z-10 w-full h-full"
       ></div>
       <div
-          class="container h-full flex flex-col justify-start md:justify-center gap-2 md:gap-4 relative z-20 top-0 pt-[50px] md:pt-0"
+          class="container h-full flex flex-col justify-center md:justify-center gap-2 md:gap-4 relative z-20 top-0"
       >
-        <h1 class="text-[30px] md:text-[40px] lg:text-[50px] xl:text-[70px] font-normal text-white leading-[1]">
+        <h1 class="text-[40px] lg:text-[50px] xl:text-[70px] font-normal text-white leading-[1]">
           Welcome to <br class="hidden md:block"> Asaba Airport
         </h1>
-        <p class="text-white">Gateway to one of Nigeria’s most commercially vibrant region.</p>
-        <a href="" class="flex items-center gap-2 text-[14px] text-white">
+        <p class="text-white text-[14px] md:text-base">Gateway to one of Nigeria’s most commercially vibrant region.</p>
+        <a href="" class="flex items-center gap-1 md:gap-2 text-[12px] text-white">
           <span>Find out more</span>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
           </svg>
         </a>
@@ -114,7 +114,7 @@ useHead({
     </section>
 
 <!--    A better experience-->
-    <section class="w-full pt-[80px] mb-[20px]">
+    <section class="w-full pt-[40px] md:pt-[80px] mb-[20px]">
 
       <div class="container">
         <h1 class="text-primary-color text-[26px] md:text-[36px] font-normal mb-[20px] leading-[1]">A better travel experience</h1>
@@ -123,7 +123,7 @@ useHead({
 <!--          <img src="../../assets/images/better-travel-experience21.jpg" alt="aia" class="w-full h-full object-cover">-->
           <div class="h-auto w-full px-[20px] md:px-[40px] py-[20px] md:py-0 change-bg relative z-10">
             <p class="w-full md:w-[400px] mb-[20px] text-primary-color md:text-white font-[300] text-base md:text-[18px]">A happy journey begins with a great airport experience! Let’s make yours memorable.</p>
-            <a href="" class="py-[5px] px-[10px] bg-white border md:border-none border-primary-color text-center text-[12px] flex items-center" style="width: min-content; white-space: nowrap">
+            <a href="" class="font-medium py-[5px] px-[10px] bg-white border md:border-none border-primary-color text-center text-[12px] flex items-center" style="width: min-content; white-space: nowrap">
               <span class="text-primary-color">Find out more</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-primary-color">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
@@ -136,7 +136,7 @@ useHead({
       </div>
     </section>
 
-    <section class="container flex gap-4 h-[528px] overflow-x-auto mb-[80px]">
+    <section class="container flex gap-4 h-[528px] overflow-x-auto mb-[40px] md:mb-[80px]">
 
       <div class="min-w-[389px] w-[389px] flex items-end relative">
         <img src="../../assets/images/covid-advisory.jpg" alt="aia" class="">
@@ -150,7 +150,7 @@ useHead({
               <br><br>
             </p>
           </div>
-          <a href="" class="text-[14px] py-[5px] px-[20px] border border-primary-color">Find out more ></a>
+          <a href="" class="text-[12px] py-[5px] px-[10px] border border-primary-color font-medium">Find out more ></a>
         </div>
       </div>
 
@@ -165,7 +165,7 @@ useHead({
               <br><br>
             </p>
           </div>
-          <a href="" class="text-[14px] py-[5px] px-[20px] border border-primary-color">Find out more ></a>
+          <a href="" class="text-[12px] py-[5px] px-[10px] border border-primary-color font-medium">Find out more ></a>
         </div>
       </div>
 
@@ -181,18 +181,18 @@ useHead({
               Lounges.
             </p>
           </div>
-          <a href="" class="text-[14px] py-[5px] px-[20px] border border-primary-color">Find out more ></a>
+          <a href="" class="text-[12px] py-[5px] px-[10px] border border-primary-color font-medium">Find out more ></a>
         </div>
       </div>
     </section>
 
 
-    <section class="w-full mt-[80px]  relative">
+    <section class="w-full mt-[40px] md:mt-[80px]  relative">
       <div class="parallax">
         <div class="container h-full flex items-center">
-          <div class="w-[90%]">
-            <h1 class="text-[30px] md:text-[40px] text-white font-normal text-primary-color leading-[1] mb-[40px]">Experience Asaba</h1>
-            <p class="text-white mb-[40px] w-full lg:w-[700px] font-[200]">
+          <div class="w-full">
+            <h1 class="text-[24px] md:text-[40px] text-white font-[300] text-primary-color leading-[1] mb-[8px] md:mb-5">Experience Asaba</h1>
+            <p class="text-white mb-2 md:mb-5 w-full lg:w-[700px] font-[200] text-[14px] md:text-base">
               You have arrived at the gateway to the vibrant and commercial South-East hub of
               Nigeria – Asaba, Delta State. Your experience of its culture, people and food starts
               here, within our airport lounge and interacting with our staff, before heading into

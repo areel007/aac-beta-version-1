@@ -6,7 +6,7 @@ useHead({
 </script>
 
 <template>
-  <div class="relative top-[148px] font-[300]">
+  <div class="relative top-[148px] font-[300]" id="top">
 <!--    Hero-->
     <AppHero />
 
@@ -63,7 +63,7 @@ useHead({
               infrastructure and security
               services.
             </p>
-            <a href="" class="text-[12px] font-semibold">Find out more ></a>
+            <a href="/corporate/our-business/#aviation" class="text-[12px] font-semibold">Find out more ></a>
           </div>
         </div>
 
@@ -85,7 +85,7 @@ useHead({
               the airport such as shopping
               and parking.
             </p>
-            <a href="" class="text-[12px] font-semibold">Find out more ></a>
+            <a href="/corporate/our-business/#non-aviation" class="text-[12px] font-semibold">Find out more ></a>
           </div>
         </div>
 
@@ -107,7 +107,7 @@ useHead({
               passengers' comfort and
               exclusivity.
             </p>
-            <a href="" class="text-[12px] font-semibold">Find out more ></a>
+            <a href="/corporate/our-business/#dedicated-services" class="text-[12px] font-semibold">Find out more ></a>
           </div>
         </div>
 
@@ -124,7 +124,7 @@ useHead({
           Asaba International Airport is Nigeria’s fifth largest airport in terms of the
           number of passengers handled and goods transported.
         </p>
-        <a href="/corporate/gateway" class="py-[10px] px-[10px] bg-secondary-color mx-auto block text-center text-[12px] font-semibold" style="width: min-content; white-space: nowrap">Find out more</a>
+        <a href="/corporate/gateway" class="py-[5px] px-[10px] bg-secondary-color mx-auto block text-center text-[12px] font-semibold" style="width: min-content; white-space: nowrap">Find out more</a>
       </div>
     </section>
   </div>

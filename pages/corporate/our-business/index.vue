@@ -13,7 +13,7 @@ useHead({
     </section>
 
     <div class="bg-white">
-      <div class="container mx-auto py-[15px] md:py-[30px] px-0 lg:px-[40px] flex items-center gap-2 md:gap-4 text-primary-color font-medium capitalize md:uppercase text-[10px] md:text-[14px]">
+      <div class="container mx-auto py-[15px] md:py-[30px] px-0 lg:px-[40px] flex items-center justify-between sm:justify-start gap-0 sm:gap-4 text-primary-color font-semibold uppercase text-[10px] md:text-[12px]">
         <a href="/corporate/our-business/#aviation" class="cursor-pointer router-link-active">Aviation</a>
         <a href="/corporate/our-business/#non-aviation" class="cursor-pointer">Non-Aviation</a>
         <a href="/corporate/our-business/#dedicated-services" class="cursor-pointer">Dedicated Services</a>

@@ -63,7 +63,7 @@ const menu = reactive([
         url: '/corporate/our-business/#non-aviation',
       },
       {
-        submenuName: 'Dedicated Business',
+        submenuName: 'Dedicated Services',
         url: '/corporate/our-business/#dedicated-services',
       },
       {

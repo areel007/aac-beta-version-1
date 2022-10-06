@@ -7,7 +7,7 @@
           <div
             class="w-[50px] h-[50px] bg-secondary-color flex justify-center items-center"
           >
-            <a href="/#">
+            <a :href="$route.fullPath">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div>
-      <div class="container py-4 md:py-10 grid grid-cols-2 md:grid-cols-3">
+      <div class="container py-10 grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-0">
         <div>
           <h3 class="uppercase text-sm font-medium text-white mb-2">Address</h3>
           <p class="text-sm text-gray-200">

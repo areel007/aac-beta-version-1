@@ -6,15 +6,15 @@ useHead({
 </script>
 
 <template>
-  <div class="w-full py-[20px] md:py-[40px] font-[300]">
+  <div class="w-full py-[40px] font-[300]">
     <div class="container">
-      <div class="w-[90%] lg:w-[900px] border-none md:border-b border-gray-700 pb-[10px] ml-0 lg:ml-[150px]">
+      <div class="w-[90%] lg:w-[900px] border-none md:border-b border-gray-700 ml-0 lg:ml-[150px]">
         <h1 class="text-[18px] md:text-[24px] uppercase font-semibold">Management team</h1>
       </div>
     </div>
 
     <div class="container">
-      <div class="py-[40px] ml-0 lg:ml-[150px]">
+      <div class="pt-[40px] ml-0 lg:ml-[150px]">
 
         <div class="grid grid-cols-1 md:grid-cols-[285px_1fr] gap-[20px] md:gap-[80px] mb-[20px] md:mb-[40px]">
           <div class="w-full h-[284px] bg-gray-300"></div>
@@ -110,7 +110,7 @@ useHead({
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-[285px_1fr] gap-[20px] md:gap-[80px] mb-[20px] md:mb-[40px]">
+        <div class="grid grid-cols-1 md:grid-cols-[285px_1fr] gap-[20px] md:gap-[80px]">
           <div class="w-full h-[284px] bg-gray-300"></div>
           <div>
             <h2 class="text-[24px] capitalize font-medium leading-[1]">Femi Odiai</h2>

@@ -6,7 +6,7 @@ useHead({
 </script>
 
 <template>
-  <div class="container py-[20px] md:py-[40px] font-[300]">
+  <div class="container py-[40px] font-[300]">
 
     <div class="w-full lg:w-[800px] ml- 0 lg:ml-[150px]">
 
