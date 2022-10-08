@@ -27,7 +27,14 @@ useHead({
 
 <!--    Video-->
     <section class="w-full h-[500px] bg-black">
-      <video src="../assets/videos/aia.mp4" muted autoplay loop class="w-full h-full object-cover"></video>
+      <video
+          src="../assets/videos/aia.mp4"
+          muted
+          loop
+          autoplay
+          controls
+          class="w-full h-full object-cover">
+      </video>
     </section>
 
 <!--    What we do-->

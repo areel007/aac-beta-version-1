@@ -313,7 +313,7 @@ header {
   background: #faa831;
   color: #004151;
 }
-.going-up {
-  top: -148px;
-}
+/*.going-up {*/
+/*  top: -148px;*/
+/*}*/
 </style>

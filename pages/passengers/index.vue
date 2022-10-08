@@ -20,6 +20,9 @@ onMounted(() => {
 useHead({
   title: 'Passengers',
   titleTemplate: (title) => `AIA - ${title}`,
+  script: [
+    { hid: 'js', src: '../../composable/getLocation.js', defer: true }
+  ]
 })
 </script>
 
@@ -136,55 +139,7 @@ useHead({
       </div>
     </section>
 
-    <section class="container flex gap-4 h-[528px] overflow-x-auto mb-[40px] md:mb-[80px]">
-
-      <div class="min-w-[389px] w-[389px] flex items-end relative">
-        <img src="../../assets/images/covid-advisory.jpg" alt="aia" class="">
-        <div class="bg-white p-[20px] absolute bottom-[4px] left-[4px] z-10 w-[90%] h-auto flex flex-col gap-[20px] items-start">
-          <div class="">
-            <h3 class="text-[20px] font-normal text-primary-color mb-[10px] leading-[1]">Covid-19 Travel Advisory</h3>
-            <p class="text-[14px]">
-              Our aviation activities include the
-              management and development of airside
-              and landside airport infrastructure.
-              <br><br>
-            </p>
-          </div>
-          <a href="" class="text-[12px] py-[5px] px-[10px] border border-primary-color font-medium">Find out more ></a>
-        </div>
-      </div>
-
-      <div class="min-w-[389px] w-[389px] flex items-end relative">
-        <img src="../../assets/images/free-wifi.jpg" alt="aia" class="">
-        <div class="bg-white p-[20px] absolute bottom-[4px] left-[4px] z-10 w-[90%] h-auto flex flex-col gap-[20px] items-start">
-          <div class="">
-            <h3 class="text-[20px] font-normal text-primary-color mb-[10px] leading-[1]">Enjoy free Wi-Fi at the airport</h3>
-            <p class="text-[14px]">
-              You can now enjoy unlimited, free, high-speed
-              Wi-Fi, across all areas of the Asaba airport.
-              <br><br>
-            </p>
-          </div>
-          <a href="" class="text-[12px] py-[5px] px-[10px] border border-primary-color font-medium">Find out more ></a>
-        </div>
-      </div>
-
-      <div class="min-w-[389px] w-[389px] flex items-end relative">
-        <img src="../../assets/images/chill-out.jpg" alt="aia" class="">
-        <div class="bg-white p-[20px] absolute bottom-[4px] left-[4px] z-10 w-[90%] h-auto flex flex-col gap-[20px] items-start">
-          <div class="">
-            <h3 class="text-[20px] font-normal text-primary-color mb-[10px] leading-[1]">Chill out before you fly</h3>
-            <p class="text-[14px]">
-              Do you want to make the most of your time at
-              the airport while you wait to fly? Then opt for
-              the space and quiet of our VIP and Protocol*
-              Lounges.
-            </p>
-          </div>
-          <a href="" class="text-[12px] py-[5px] px-[10px] border border-primary-color font-medium">Find out more ></a>
-        </div>
-      </div>
-    </section>
+    <Carousel />
 
 
     <section class="w-full mt-[40px] md:mt-[80px]  relative">
