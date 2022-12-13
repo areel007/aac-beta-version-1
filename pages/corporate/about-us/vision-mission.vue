@@ -10,27 +10,28 @@ const reduce = ref(false)
     <div class="mb-[40px]">
       <div class="container">
 
-        <h1 class="text-[20px] md:text-[28px] mb-[20px]">Vision & Mission</h1>
-        <div class="grid grid-cols-1 md:grid-cols-[500px_1fr] gap-[20px]">
-          <div class="w-full md:w-[500px] h-[400px] bg-gray-300"></div>
-          <div>
-            <p>
-              The Airport Authority Hong Kong (AA) is a statutory body wholly owned by the Hong Kong SAR Government.
-              Established in 1995, the AA is responsible for the operation and development of Hong Kong International
-              Airport (HKIA). The AA is governed by the Airport Authority Ordinance (Chapter 483, The Laws of Hong Kong).
-            </p>
-            <br>
-            <ul class="list-disc ml-[20px]">
-              <li>Our board comprises a Chairman, CEO and between eight to 15 other members</li>
-              <li>The management team is comprised of experts from different sectors</li>
-              <li>AA employs 2,900 staff in total</li>
-            </ul>
-          </div>
-        </div>
+<!--        <h1 class="text-[20px] md:text-[28px] mb-[20px]">Vision & Mission</h1>-->
+
+<!--        <div class="grid grid-cols-1 md:grid-cols-[500px_1fr] gap-[20px]">-->
+<!--          <div class="w-full md:w-[500px] h-[400px] bg-gray-300"></div>-->
+<!--          <div>-->
+<!--            <p>-->
+<!--              Asaba International Airport (AIA) is a statutory body wholly owned by the Hong Kong SAR Government.-->
+<!--              Established in 1995, the AA is responsible for the operation and development of Hong Kong International-->
+<!--              Airport (HKIA). The AA is governed by the Airport Authority Ordinance (Chapter 483, The Laws of Hong Kong).-->
+<!--            </p>-->
+<!--            <br>-->
+<!--            <ul class="list-disc ml-[20px]">-->
+<!--              <li>Our board comprises a Chairman, CEO and between eight to 15 other members</li>-->
+<!--              <li>The management team is comprised of experts from different sectors</li>-->
+<!--              <li>AA employs 2,900 staff in total</li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </div>-->
       </div>
     </div>
 
-    <div class="w-full mx-auto py-[40px] bg-[#F6F1EF]">
+    <div class="w-full mx-auto">
       <h1 class="text-[20px] md:text-[28px] text-center">Vision, Mission & Values</h1>
       <div class="w-full h-auto mb-[80px]">
 

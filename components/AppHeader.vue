@@ -7,9 +7,26 @@ const props = defineProps({
   menu: {
     type: [Object],
   },
+  passengersMenu: [Object],
   isMobileMenuOut: {
     type: Boolean,
   },
+  searchResult: {
+    type: Array
+  },
+  isSearch: {
+    type: Boolean
+  },
+  modelValue: {
+    type: String,
+    default: ''
+  },
+  searchInputValue: {
+    type: String,
+  },
+  showMobileSearch: {
+    type: Boolean,
+  }
 });
 
 const scrollPosition = ref(null);
@@ -32,6 +49,7 @@ onMounted(() => {
 
 const weather = ref(null);
 const weatherIcon = ref(null);
+const searchValue = ref(null)
 
 const getWeatherToCelcius = computed(() => {
   if (weather.value===null) {
@@ -60,37 +78,139 @@ onMounted(() => getWeather());
 </script>
 
 <template>
-  <header class="w-full bg-white fixed z-[100] top-0 left-0 h-[148px]">
+  <header class="w-full bg-white fixed z-[100] top-0 left-0 h-[148px]" v-if="true">
     <div
-      class="h-[60px] w-full bg-gradient-to-t from-primary-color to-[#1e1e1e]"
+      class="h-[60px] w-full bg-gradient-to-t from-primary-color to-[#1e1e1e] relative"
     >
+<!--      Search dropdown-->
+      <div v-if="searchInputValue.trim().length>0" class="absolute top-full left-0 py-[20px] bg-white shadow z-[2000] w-full">
+        <div class="container">
+          <div class="flex justify-between items-center">
+
+            <p v-if="searchResult.length>=5" class="text-[12px] mb-[20px]">Top 5 results for '<span class="text-secondary-color">{{ searchInputValue }}</span>'</p>
+            <p v-else class="text-[12px] mb-[20px]">Search results for '<span class="text-secondary-color">{{ searchInputValue }}</span>'</p>
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-4 h-4 cursor-pointer"
+                @click="$emit('close-search')"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+
+          </div>
+
+<!--          Search result list -->
+          <div>
+            <p v-if="searchResult.length===0">No result for '{{ searchInputValue }}'</p>
+            <ul v-else class="w-[90%] md:w-[600px]">
+              <li class="text-[12px] md:text-[14px] mb-[20px] text-primary-color hover:text-secondary-color" v-for="(_result, index) in searchResult.slice(0, 5)" :key="index">
+                <a :href="_result.path">
+                  {{ _result.name }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <div
         class="container h-full flex justify-end items-center gap-3 md:gap-8"
       >
         <!-- Search component -->
-        <div
-          class="sm:flex items-center gap-2 border-b border-gray-400 pb-[2px] hidden w-auto md:w-[300px]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-4 h-4 text-gray-400"
+        <div>
+<!--          Mobile search dropdown-->
+          <div class="w-full p-[21px] h-auto bg-white fixed left-0 top-[60px] z-[1000] shadow-lg"  v-if="showMobileSearch">
+
+            <div class="flex gap-2 items-center">
+              <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-4 h-4 text-gray-400"
+              >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                />
+              </svg>
+
+              <input
+                  type="text"
+                  placeholder="Search & Explore"
+                  :value="modelValue"
+                  @input="$emit('update:modelValue', $event.target.value)"
+                  @keyup="$emit('search-action', modelValue)"
+                  class="bg-transparent w-full text-primary-color text-[12px] placeholder:text-[12px] placeholder:text-gray-400 outline-none"
+              />
+
+<!--              Mobile close search button -->
+              <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-4 h-4"
+                  @click="$emit('close-mobile-search')"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+
+            </div>
+
+          </div>
+
+          <div
+              class="sm:flex items-center gap-2 border-b border-gray-400 pb-[2px] hidden w-auto md:w-[300px]"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-4 h-4 text-gray-400"
+            >
+              <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+              />
+            </svg>
+
+            <input
+                type="text"
+                placeholder="Search & Explore"
+                :value="modelValue"
+                @input="$emit('update:modelValue', $event.target.value)"
+                @keyup="$emit('search-action', modelValue)"
+                class="bg-transparent text-white text-[12px] placeholder:text-[12px] placeholder:text-gray-400 outline-none"
             />
+
+          </div>
+
+          <!--          Mobile search button -->
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-4 h-4 block sm:hidden text-white cursor-pointer"
+              @click="$emit('open-mobile-search')"
+              v-if="!showMobileSearch"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
           </svg>
 
-          <input
-            type="text"
-            placeholder="Search & Explore"
-            class="bg-transparent text-white text-[12px] placeholder:text-[12px] placeholder:text-gray-400 outline-none"
-          />
         </div>
 
         <!-- Weather Component -->
@@ -124,18 +244,19 @@ onMounted(() => getWeather());
           >
         </div>
       </div>
+
     </div>
+
     <div class="container flex justify-between h-[80px] items-center relative">
       <img
         src="../assets/images/aia-logo.svg"
         alt="aac"
-        class="w-100 md:w-150"
+        class="w-100 lg:w-150"
         @click="$router.push('/')"
       />
 
 <!--      Nav menu-->
-
-      <nav class="h-full hidden md:flex items-center">
+      <nav v-if="$route.fullPath[1] === 'c' || $route.fullPath === '/'" class="h-full hidden md:flex items-center">
         <div
             v-for="(_menu, index) in menu"
             :key="index"
@@ -196,9 +317,27 @@ onMounted(() => getWeather());
             </div>
           </div>
 
+<!--          Help -->
+          <div
+              v-if="_menu.menuName==='Help'"
+              class="h-full h-full flex items-center group"
+          >
+            <a href="/corporate/our-business" class="cursor-pointer hover:text-secondary-color">{{ _menu.menuName }}</a>
+            <div class="absolute top-full z-10 bg-white w-full left-0 p-[40px] font-[400] hidden group-hover:block">
+              <a
+                  v-for="(_submenu, index) in _menu.submenu"
+                  :key="index"
+                  :href="_submenu.url"
+                  class="block h-[50px] hover:underline"
+              >
+                {{ _submenu.submenuName }}
+              </a>
+            </div>
+          </div>
+
 <!--          No dropdown-->
           <a
-              :href="_menu.menuUrl" v-if="_menu.menuName!== 'About us' && _menu.menuName !== 'Our business' && _menu.menuName !== 'Flights'"
+              :href="_menu.menuUrl" v-if="_menu.menuName!== 'About us' && _menu.menuName !== 'Our business' && _menu.menuName !== 'Flights' && _menu.menuName !== 'Help'"
               class="hover:text-secondary-color"
           >
             {{ _menu.menuName }}
@@ -206,78 +345,100 @@ onMounted(() => getWeather());
 
         </div>
       </nav>
-<!--      <nav-->
-<!--        class="uppercase hidden md:flex items-center font-[400] text-xs h-full"-->
-<!--      >-->
-<!--        <a-->
-<!--          :href="_menu.menuUrl"-->
-<!--          v-for="(_menu, index) in menu"-->
-<!--          :key="index"-->
-<!--          class="text-primary hover:text-secondary-color px-4 h-full flex justify-center items-center border-transparent hover:border-primary-color"-->
-<!--        >-->
-<!--          <div-->
-<!--            v-if="_menu.menuName === 'About us'"-->
-<!--            class="group h-full flex items-center justify-center"-->
-<!--          >-->
-<!--            <div class="">{{ _menu.menuName }}</div>-->
-<!--            <div-->
-<!--              class="absolute top-full left-0 z-20 w-full p-[40px] bg-white hidden group-hover:block border-t border-gray-300"-->
-<!--            >-->
-<!--              <a-->
-<!--                v-for="(_submenu, index) in _menu.submenu"-->
-<!--                :key="index"-->
-<!--                :href="_submenu.url"-->
-<!--                class="block last:mb-0 hover:underline text-primary-color h-[50px] flex items-center"-->
-<!--                >{{ _submenu.submenuName }}</a-->
-<!--              >-->
-<!--            </div>-->
-<!--          </div>-->
 
-<!--          <div-->
-<!--            v-if="_menu.menuName === 'Our business'"-->
-<!--            class="group h-full flex items-center justify-center"-->
-<!--          >-->
-<!--            <div class="">{{ _menu.menuName }}</div>-->
-<!--            <div-->
-<!--              class="absolute top-full left-0 z-20 w-full p-[40px] bg-white hidden group-hover:block border-t border-gray-300"-->
-<!--            >-->
-<!--              <a-->
-<!--                v-for="(_submenu, index) in _menu.submenu"-->
-<!--                :key="index"-->
-<!--                :href="_submenu.url"-->
-<!--                class="block last:mb-0 hover:underline text-primary-color h-[50px] flex items-center"-->
-<!--                >{{ _submenu.submenuName }}</a-->
-<!--              >-->
-<!--            </div>-->
-<!--          </div>-->
+<!--      Passenger nav-->
+      <nav v-else class="h-full hidden md:flex items-center">
 
-<!--          <div-->
-<!--              v-if="_menu.menuName === 'Flights'"-->
-<!--              class="group h-full flex items-center justify-center"-->
-<!--          >-->
-<!--            <div class="">{{ _menu.menuName }}</div>-->
-<!--            <div-->
-<!--                class="absolute top-full left-0 z-20 w-full p-[40px] bg-white hidden group-hover:block border-t border-gray-300"-->
-<!--            >-->
-<!--              <a-->
-<!--                  v-for="(_submenu, index) in _menu.submenu"-->
-<!--                  :key="index"-->
-<!--                  :href="_submenu.url"-->
-<!--                  class="block last:mb-0 hover:underline text-primary-color h-[50px] flex items-center"-->
-<!--              >{{ _submenu.submenuName }}</a-->
-<!--              >-->
-<!--            </div>-->
-<!--          </div>-->
+        <div
+            class="uppercase text-[8px] sm:text-[10px] lg:text-[12px] px-[20px] h-full flex items-center text-primary-color font-medium group cursor-pointer"
+            v-for="(_menu, index) in passengersMenu"
+            :key="index"
+        >
 
-<!--          <a-->
-<!--              :href="_menu.menuUrl"-->
-<!--            v-if="-->
-<!--              _menu.menuName !== 'About us' && _menu.menuName !== 'Our business' && _menu.menuName !== 'Flights'-->
-<!--            "-->
-<!--            >{{ _menu.menuName }}</a-->
-<!--          >-->
-<!--        </a>-->
-<!--      </nav>-->
+<!--          Flights -->
+          <div
+              v-if="_menu.menuName==='Flights'"
+              class="h-full h-full flex items-center group"
+          >
+            <span class="hover:text-secondary-color">{{ _menu.menuName }}</span>
+            <div class="absolute top-full z-10 bg-white w-full left-0 p-[40px] font-[400] hidden group-hover:block">
+              <a
+                  v-for="(_submenu, index) in _menu.submenu"
+                  :key="index"
+                  :href="_submenu.url"
+                  class="block h-[50px] hover:underline"
+              >
+                {{ _submenu.submenuName }}
+              </a>
+            </div>
+          </div>
+
+<!--          Help -->
+          <div
+              v-if="_menu.menuName==='Help'"
+              class="h-full h-full flex items-center group"
+          >
+            <span class="hover:text-secondary-color">{{ _menu.menuName }}</span>
+            <div class="absolute top-full z-10 bg-white w-full left-0 p-[40px] font-[400] hidden group-hover:block">
+              <a
+                  v-for="(_submenu, index) in _menu.submenu"
+                  :key="index"
+                  :href="_submenu.url"
+                  class="block h-[50px] hover:underline"
+              >
+                {{ _submenu.submenuName }}
+              </a>
+            </div>
+          </div>
+
+<!--          At the airport -->
+          <div
+              v-if="_menu.menuName==='At the airport'"
+              class="h-full h-full flex items-center group"
+          >
+            <span class="hover:text-secondary-color">{{ _menu.menuName }}</span>
+            <div class="absolute top-full z-10 bg-white w-full left-0 p-[40px] font-[400] hidden group-hover:block">
+              <a
+                  v-for="(_submenu, index) in _menu.submenu"
+                  :key="index"
+                  :href="_submenu.url"
+                  class="block h-[50px] hover:underline"
+              >
+                {{ _submenu.submenuName }}
+              </a>
+            </div>
+          </div>
+
+<!--          Services-->
+          <div
+              v-if="_menu.menuName==='Services'"
+              class="h-full h-full flex items-center group"
+          >
+            <span class="hover:text-secondary-color">{{ _menu.menuName }}</span>
+            <div class="absolute top-full z-10 bg-white w-full left-0 p-[40px] font-[400] hidden group-hover:block">
+              <a
+                  v-for="(_submenu, index) in _menu.submenu"
+                  :key="index"
+                  :href="_submenu.url"
+                  class="block h-[50px] hover:underline"
+              >
+                {{ _submenu.submenuName }}
+              </a>
+            </div>
+          </div>
+
+<!--          Home & Experience Asaba-->
+          <a
+              :href="_menu.menuUrl" v-if="_menu.menuName!== 'Flights' && _menu.menuName !== 'Help' && _menu.menuName !== 'Services' && _menu.menuName !== 'At the airport'"
+              class="hover:text-secondary-color"
+          >
+            {{ _menu.menuName }}
+          </a>
+
+        </div>
+      </nav>
+
+<!--      Hamburger-->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -295,6 +456,8 @@ onMounted(() => getWeather());
         />
       </svg>
     </div>
+
+<!--    Yellow lines-->
     <div
       class="relative h-2 w-full bg-gradient-to-r from-yellow-300 to-[#f69f09]"
     ></div>

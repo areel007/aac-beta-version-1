@@ -3,19 +3,20 @@ import { ref, onMounted } from 'vue';
 
 const count = ref(0)
 const step = ref(1)
-// const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
-const date = ref(new Date().toLocaleDateString())
 
-onMounted(() => {
-  console.log(date.value)
-  setInterval(() => {
-    if (count.value < 1) {
-      count.value += 1
-    } else {
-      count.value = 0
-    }
-  }, 5000)
-})
+// const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+// const date = ref(new Date().toLocaleDateString())
+//
+// onMounted(() => {
+//   console.log(date.value)
+//   setInterval(() => {
+//     if (count.value < 1) {
+//       count.value += 1
+//     } else {
+//       count.value = 0
+//     }
+//   }, 5000)
+// })
 
 useHead({
   title: 'Passengers',
@@ -28,6 +29,7 @@ useHead({
 
 <template>
   <div class="w-full relative top-[148px] font-[300]">
+
 <!--    Passengers Hero-->
     <section class="w-full h-[calc(80vh-120px)] md:h-[calc(100vh_-_88px)] relative">
       <img src="../../assets/images/slide-1.jpg" v-if="count===0" alt="aia" class="top-0 w-full h-full object-cover absolute z-10">
