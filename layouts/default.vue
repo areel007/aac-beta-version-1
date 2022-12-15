@@ -21,24 +21,6 @@ const menu = reactive([
     menuName: "Home",
     menuUrl: "/",
   },
-  // {
-  //   menuName: "Flights",
-  //   menuUrl: "#",
-  //   submenu: [
-  //     {
-  //       submenuName: 'Arrivals',
-  //       url:'/passengers/flights/arrivals'
-  //     },
-  //     {
-  //       submenuName: 'Departures',
-  //       url:'/passengers/flights/departures'
-  //     },
-  //     {
-  //       submenuName: 'Passengers Guide',
-  //       url:'/passengers/flights/passengers-guide'
-  //     },
-  //   ]
-  // },
   {
     menuName: "About us",
     menuUrl: "#",
@@ -89,11 +71,11 @@ const menu = reactive([
     submenu: [
       {
         submenuName: 'Contacts',
-        url:'/contacts'
+        url:'/corporate/help/contacts'
       },
       {
         submenuName: 'Faq',
-        url:'/faq'
+        url:'/corporate/help/faq'
       },
     ]
   },
@@ -126,19 +108,9 @@ const passengersMenu = reactive([
         submenuName: 'Passengers Guide',
         url:'/passengers/passengers-guide'
       },
-    ]
-  },
-  {
-    menuName: "Services",
-    menuUrl: "#",
-    submenu: [
       {
-        submenuName: 'VIP Lounge',
-        url:'/passengers/services/vip-lounge'
-      },
-      {
-        submenuName: 'Free wifi',
-        url:'/passengers/services/free-wifi'
+        submenuName: 'Services',
+        url:'/passengers/services'
       },
     ]
   },

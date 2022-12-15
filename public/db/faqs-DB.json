@@ -1,0 +1,107 @@
+[
+  {
+    "category": "booking and check-in",
+    "questions": [
+      {
+        "question": "How do I book my ticket online?",
+        "answer": "You can book your ticket by visiting the website of the airline you are flying with",
+        "showAnswer": false
+      },
+      {
+        "question": "What ID is required for check in?",
+        "answer": "A valid photo-based identity card issued by the government, such as National Identity Card (NIN), Voters Card, and Passport, is required for domestic flights, while you’ll need your Passport and Visa for international flights",
+        "showAnswer": false
+      }
+    ]
+  },
+  {
+    "category": "general enquiry",
+    "questions": [
+      {
+        "question": "What states in Nigeria can I travel to from Asaba Airport?",
+        "answer": "Lagos, Abuja, and Kano.",
+        "showAnswer": false
+      },
+      {
+        "question": "What is the operating time of Asaba International Airport?",
+        "answer": "Sunset to Sunrise with extended hours on demand.",
+        "showAnswer": false
+      },
+      {
+        "question": "What are the airlines operating at Asaba International Airport?",
+        "answer": "Dana Air, Aero Contractors, Value Jet, Arik, United Nigeria, Air Peace, Overland Airways, and Max Air.",
+        "showAnswer": false
+      },
+      {
+        "question": "Are there hotels in Asaba International Airport?",
+        "answer": "Yes, a resort garden is available, and planned five-star hotel as a part of the new masterplan.",
+        "showAnswer": false
+      }
+    ]
+  },
+  {
+    "category": "parking or drop-off",
+    "questions": [
+      {
+        "question": "What are my options for parking at Asaba International Airport?",
+        "answer": "Our car parking options are long, mid, and short stay. A drop-off zone is also available for passengers and VIPs. The drop-off VIP zone area is located at the departure and arrival hall entrance of the terminal building.",
+        "showAnswer": false
+      },
+      {
+        "question": "Can I drop someone off at Asaba Airport?",
+        "answer": "Yes, with applicable Terms & Conditions of usage of our drop-off areas and parking zones.",
+        "showAnswer": false
+      },
+      {
+        "question": "Is there a charge for dropping passengers off?",
+        "answer": "Yes, charges are however dependent on the size of vehicle.",
+        "showAnswer": false
+      }
+    ]
+  },
+  {
+    "category": "wifi",
+    "questions": [
+      {
+        "question": "How do I access Wi-Fi?",
+        "answer": "Choose 'Free Asaba International Airport Wi-Fi' from the available wireless networks, a pop-up screen will appear with a sign-up form. Follow the instructions, click the button to get online.",
+        "showAnswer": false
+      }
+    ]
+  },
+  {
+    "category": "accessibility or mobility",
+    "questions": [
+      {
+        "question": "Can I travel with my own mobility aid?",
+        "answer": "You are welcome to travel with your own mobility equipment, such as wheelchairs. However, we advise you inform your airline in advance.",
+        "showAnswer": false
+      }
+    ]
+  },
+  {
+    "category": "delays or cancellation",
+    "questions": [
+      {
+        "question": "What happens if my flight is delayed or cancelled?",
+        "answer": "In the event of severe delays or flight cancellations, please contact your airline directly.",
+        "showAnswer": false
+      }
+    ]
+  },
+  {
+    "category": "bags or lost baggage",
+    "questions": [
+      {
+        "question": "I’ve lost something at the airport, how do I get it back?",
+        "answer": "If you have lost your baggage, or items while on an aircraft or airline bus, contact your airline directly.",
+        "showAnswer": false
+      },
+      {
+        "question": "How many bags am I allowed?",
+        "answer": "Please check with your airline or on your ticket for their on-board baggage rules.",
+        "showAnswer": false
+      }
+    ]
+  }
+]

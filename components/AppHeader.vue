@@ -83,24 +83,12 @@ onMounted(() => getWeather());
       class="h-[60px] w-full bg-gradient-to-t from-primary-color to-[#1e1e1e] relative"
     >
 <!--      Search dropdown-->
-      <div v-if="searchInputValue.trim().length>0" class="absolute top-full left-0 py-[20px] bg-white shadow z-[2000] w-full">
+      <div v-if="searchInputValue.trim().length>0" class="absolute top-[120px] md:top-full left-0 py-[20px] bg-white shadow z-[2000] w-full">
         <div class="container">
           <div class="flex justify-between items-center">
 
             <p v-if="searchResult.length>=5" class="text-[12px] mb-[20px]">Top 5 results for '<span class="text-secondary-color">{{ searchInputValue }}</span>'</p>
             <p v-else class="text-[12px] mb-[20px]">Search results for '<span class="text-secondary-color">{{ searchInputValue }}</span>'</p>
-
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-4 h-4 cursor-pointer"
-                @click="$emit('close-search')"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
 
           </div>
 
@@ -115,6 +103,8 @@ onMounted(() => getWeather());
               </li>
             </ul>
           </div>
+
+
         </div>
       </div>
 
@@ -158,7 +148,7 @@ onMounted(() => getWeather());
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-4 h-4"
+                  class="w-4 h-4 cursor-pointer"
                   @click="$emit('close-mobile-search')"
               >
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -192,8 +182,21 @@ onMounted(() => getWeather());
                 :value="modelValue"
                 @input="$emit('update:modelValue', $event.target.value)"
                 @keyup="$emit('search-action', modelValue)"
-                class="bg-transparent text-white text-[12px] placeholder:text-[12px] placeholder:text-gray-400 outline-none"
+                class="bg-transparent w-full text-white text-[12px] placeholder:text-[12px] placeholder:text-gray-400 outline-none"
             />
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-4 h-4 cursor-pointer text-white"
+                @click="$emit('close-search')"
+                v-if="searchInputValue.trim().length>0"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
 
           </div>
 

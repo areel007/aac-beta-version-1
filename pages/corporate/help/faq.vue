@@ -14,7 +14,7 @@ const selectCategory = async (e) => {
   const response = await axios.get("/db/faqs-DB.json");
   if (e !== "category") {
     faqs.value = response.data.filter((_res) =>
-        _res.category.toLowerCase().includes(e.toLowerCase())
+      _res.category.toLowerCase().includes(e.toLowerCase())
     );
   } else {
     faqs.value = response.data;
@@ -51,37 +51,37 @@ useHead({
       <div class="container">
         <div class="ml-0 lg:ml-[150px]">
           <a
-              href="/passengers"
-              class="flex gap-1 items-center"
-              style="width: min-content; white-space: nowrap"
+            href="/passengers"
+            class="flex gap-1 items-center"
+            style="width: min-content; white-space: nowrap"
           >
             <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-4 h-4 text-primary-color"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-4 h-4 text-primary-color"
             >
               <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
               />
             </svg>
 
             <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-4 h-4 text-primary-color"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-4 h-4 text-primary-color"
             >
               <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
               />
             </svg>
 
@@ -94,23 +94,23 @@ useHead({
     <section class="py-[15px] md:py-[30px]">
       <div class="container">
         <div
-            class="ml-0 lg:ml-[150px] grid grid-cols-1 md:grid-cols-[5fr_3fr] gap-[20px] w-full lg:w-[800px]"
+          class="ml-0 lg:ml-[150px] grid grid-cols-1 md:grid-cols-[5fr_3fr] gap-[20px] w-full lg:w-[800px]"
         >
 
-          <!-- Search FAQS -->
+        <!-- Search FAQS -->
           <input
-              type="text"
-              class="w-full p-2 border border-gray-300 outline-none placeholder:text-[14px]"
-              placeholder="Enter your question here to search..."
-              v-model="searchInputValue"
-              @keyup="searchFaqs($event.target.value)"
+            type="text"
+            class="w-full p-2 border border-gray-300 outline-none placeholder:text-[14px]"
+            placeholder="Enter your question here to search..."
+            v-model="searchInputValue"
+            @keyup="searchFaqs($event.target.value)"
           />
 
           <!--          Select categories-->
           <select
-              class="w-full p-2 border border-gray-300 outline-none placeholder:text-[14px] text-[14px]"
-              v-model="selectedCategory"
-              @change="selectCategory($event.target.value)"
+            class="w-full p-2 border border-gray-300 outline-none placeholder:text-[14px] text-[14px]"
+            v-model="selectedCategory"
+            @change="selectCategory($event.target.value)"
           >
             <option value="category">Category</option>
             <option value="booking and check-in">Booking & Check-in</option>
@@ -124,11 +124,11 @@ useHead({
             <option value="bags or lost baggage">Bags/Lost Baggage</option>
           </select>
 
-          <!-- <button
-              class="w-full p-2 bg-primary-color outline-none placeholder:text-[14px] text-[14px] text-white"
-          >
-            Search
-          </button> -->
+<!--          <button-->
+<!--            class="w-full p-2 bg-primary-color outline-none placeholder:text-[14px] text-[14px] text-white"-->
+<!--          >-->
+<!--            Search-->
+<!--          </button>-->
         </div>
       </div>
     </section>
@@ -139,16 +139,16 @@ useHead({
           <!--          Booking -->
           <div class="mb-[20px]" v-for="(_faq, index) in faqs" :key="index">
             <span
-                class="text-primary-color font-medium uppercase text-[14px] mb-[20px] block"
-            >{{ _faq.category }}</span
+              class="text-primary-color font-medium uppercase text-[14px] mb-[20px] block"
+              >{{ _faq.category }}</span
             >
 
             <!--            -->
             <div
-                class="mb-[10px] cursor-pointer"
-                @click="_question.showAnswer = !_question.showAnswer"
-                v-for="(_question, index) in _faq.questions"
-                :key="index"
+              class="mb-[10px] cursor-pointer"
+              @click="_question.showAnswer = !_question.showAnswer"
+              v-for="(_question, index) in _faq.questions"
+              :key="index"
             >
               <div class="grid grid-cols-[1fr_40px]">
                 <p class="text-gray-400 font-medium text-[16px]">
@@ -156,39 +156,39 @@ useHead({
                 </p>
 
                 <button
-                    class="w-[30px] h-[30px] bg-primary-color rounded-full flex justify-self-end"
+                  class="w-[30px] h-[30px] bg-primary-color rounded-full flex justify-self-end"
                 >
                   <!--                  Plus-->
                   <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="w-5 h-5 text-white m-auto"
-                      v-if="!_question.showAnswer"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5 text-white m-auto"
+                    v-if="!_question.showAnswer"
                   >
                     <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12 4.5v15m7.5-7.5h-15"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
                     />
                   </svg>
 
                   <!--                  Minus-->
                   <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="w-5 h-5 text-white m-auto"
-                      v-else
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5 text-white m-auto"
+                    v-else
                   >
                     <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M18 12H6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M18 12H6"
                     />
                   </svg>
                 </button>
@@ -196,8 +196,8 @@ useHead({
 
               <Transition name="slide-fade">
                 <p
-                    v-show="_question.showAnswer"
-                    class="text-[16px] max-w-[700px] py-[10px]"
+                  v-show="_question.showAnswer"
+                  class="text-[16px] max-w-[700px] py-[10px]"
                 >
                   {{ _question.answer }}
                 </p>
